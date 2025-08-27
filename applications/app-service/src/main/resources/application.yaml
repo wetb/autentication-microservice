@@ -23,9 +23,19 @@ management:
 cors:
   allowed-origins: "http://localhost:4200,http://localhost:8080"
 
-mysql:
-  host: localhost
-  port: 3306
-  database: mi_base_datos
-  username: usuario
-  password: contraseña
+routes:
+  paths:
+    users: "/api/v1/usuarios"
+    userById: "/api/v1/usuarios/{id}"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+adapters:
+  r2dbc:
+    host: localhost
+    port: 5432
+    database: authentication
+    username: postgres
+    password: admin123
