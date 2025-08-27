@@ -1,12 +1,12 @@
-package co.com.bancolombia.api.errors;
+package co.com.bancolombia.api.exceptions;
 
-import co.com.bancolombia.model.Errors.gateways.ApplicationError;
+import co.com.bancolombia.model.exceptions.gateways.ApplicationError;
 
 import java.util.Set;
 
-public class ErrorValidation  extends  RuntimeException implements ApplicationError {
+public class ExceptionsValidation extends  RuntimeException implements ApplicationError {
     private Set<String> fields;
-    public ErrorValidation(String message, Set<String> fields){
+    public ExceptionsValidation(String message, Set<String> fields){
         super(message);
         this.fields = fields;
     }

@@ -1,6 +1,5 @@
-package co.com.bancolombia.api;
+package co.com.bancolombia.api.exceptions;
 
-import co.com.bancolombia.api.exceptions.ExceptionsValidation;
 import co.com.bancolombia.model.exceptions.DomainException;
 import co.com.bancolombia.model.exceptions.gateways.ApplicationError;
 import com.fasterxml.jackson.core.JsonProcessingException;

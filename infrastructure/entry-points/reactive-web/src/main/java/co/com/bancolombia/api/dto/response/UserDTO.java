@@ -1,4 +1,20 @@
-package co.com.bancolombia.api.dto.request.response;
+package co.com.bancolombia.api.dto.response;
 
-public class UserDTO {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+public record UserDTO (
+        String name,
+        String lastName,
+         String email,
+        String phone,
+        String identityDocument,
+        BigDecimal salary,
+        String address,
+        LocalDate dateBirth,
+        Long idRole
+) {
 }
