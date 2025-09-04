@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public record UserDTO (
         String name,
         String lastName,
-         String email,
+        String email,
         String phone,
         String identityDocument,
         BigDecimal salary,

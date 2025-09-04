@@ -10,5 +10,6 @@ import reactor.core.publisher.Mono;
 public interface MyReactiveRepository extends ReactiveCrudRepository<UserEntity, Long>, ReactiveQueryByExampleExecutor<UserEntity> {
     // Mono<Void> deletedByUsrId(Long idUser);
     Mono<Boolean> existsByEmail(String email);
+    Mono<Boolean> existsByIdentityDocument (String documentId);
 
 }

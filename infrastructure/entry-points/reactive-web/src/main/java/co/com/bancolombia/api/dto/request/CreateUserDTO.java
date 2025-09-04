@@ -1,5 +1,6 @@
 package co.com.bancolombia.api.dto.request;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 
@@ -13,6 +14,7 @@ public record CreateUserDTO (
         @NotBlank(message = "The email field is required.")
         @Email(message = "invalid format email")
         @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Invalid email format")
+        @Schema(description = "email user", example = "usuario@dominio.com")
         String email,
         String phone,
         String identityDocument,

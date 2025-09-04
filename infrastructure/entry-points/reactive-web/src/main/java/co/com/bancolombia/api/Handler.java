@@ -37,18 +37,15 @@ public class Handler {
                 .doOnError(e -> log.error("Error saving user: {}", e.getMessage()));
     }
 
-    public Mono<ServerResponse> listenGETUseCase(ServerRequest serverRequest) {
-        // useCase.logic();
-        return ServerResponse.ok().bodyValue("");
+    public Mono<ServerResponse> existsUserByIdentityDocument(ServerRequest serverRequest){
+        String identityDocument = serverRequest.pathVariable("identityDocument");
+        log.info("Starting user query flow by documentId  : {}", identityDocument);
+        return userUseCase.UserExistsByIdentityDocument(String.valueOf(identityDocument))
+                .flatMap(
+                        exists -> ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue("{\"exists\": " + exists + "}")
+                );
     }
 
-    public Mono<ServerResponse> listenGETOtherUseCase(ServerRequest serverRequest) {
-        // useCase2.logic();
-        return ServerResponse.ok().bodyValue("");
-    }
-
-    public Mono<ServerResponse> listenPOSTUseCase(ServerRequest serverRequest) {
-        // useCase.logic();
-        return ServerResponse.ok().bodyValue("");
-    }
 }
